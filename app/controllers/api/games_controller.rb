@@ -13,7 +13,7 @@ class Api::GamesController < ApplicationController
     else   
       if your_name =~ /^[aA]/ #could also be if your_name[0].downcase = "a" or your_name.starts_with? check that method out.
         @name = "Your name is #{your_name} and it begins with the letter A!"
-      elsif
+      else
         @name = "Your name is #{your_name} and it doesn't begin with an A!"
       end
     end
@@ -33,4 +33,20 @@ class Api::GamesController < ApplicationController
     end
   render "guessing_game_view.json.jbuilder"
   end
+
+  # def guessing_game_segment_action # don't really need a separate action if the
+  #   your_guess = params["my_guess"] # URL segment param key is the same as in the action.
+  #   your_guess_number = your_guess.to_i
+  #   number = 77
+  #   if your_guess_number < number
+  #     @answer = "Higher!"
+  #   elsif your_guess_number > number
+  #     @answer = "Lower!"
+  #   else
+  #     @answer = "Got it!"
+  #   end
+  # render "guessing_game_view.json.jbuilder"
+  # end
+
+
 end
